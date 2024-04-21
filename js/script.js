@@ -46,4 +46,51 @@ function calculateBMI() {
         bodyStatus = "Obese Class VI";
     }
 
-};
+    // Display body status
+    var resultText = "Your BMI is: " + bmi.toFixed(2);
+    resultText += "<br>Body status: <span style='color: ";
+
+    switch (bodyStatus) {
+        case "Severe Thinness":
+        case "Moderate Thinness":
+            resultText += "lightblue";
+            break;
+        case "Mild Thinness":
+            resultText += "darkblue";
+            break;
+        case "Normal":
+            resultText += "green";
+            break;
+        case "Overweight":
+            resultText += "orange";
+            break;
+        case "Obese Class I":
+        case "Obese Class II":
+        case "Obese Class III":
+            resultText += "darkorange";
+            break;
+        case "Obese Class IV":
+        case "Obese Class V":
+        case "Obese Class VI":
+            resultText += "red";
+            break;
+    }
+
+    resultText += "'>" + bodyStatus + "</span>";
+
+    // Calculate ideal weight range based on BMI
+    var lowerBound = 18.5 * heightInMeters * heightInMeters;
+    var upperBound = 24.9 * heightInMeters * heightInMeters;
+
+    // Display ideal weight range
+    resultText += "<br>Ideal weight range: " + lowerBound.toFixed(2) + "kg - " + upperBound.toFixed(2) + "kg";
+
+    // Display the result
+    resultElement.innerHTML = resultText;
+}
+
+// Add event
+document.querySelector("form").addEventListener("submit", function (event) {
+    event.preventDefault();
+    calculateBMI();
+});
