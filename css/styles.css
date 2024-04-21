@@ -87,3 +87,33 @@ thead {
     background-color: #f0f0f0;
 }
 
+tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #ffffff;
+}
+
+footer {
+    background-color: #c7c5c5;
+    color: #222222;
+    text-align: center;
+    font-weight: bold;
+    padding: 20px 0;
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+footer a {
+    color: #4d4d4d;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+
