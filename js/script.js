@@ -14,4 +14,36 @@ function calculateBMI() {
     var height = parseFloat(heightInput.value);
     var weight = parseFloat(weightInput.value);
 
- 
+    // Convert height to meters
+    var heightInMeters = height / 100;
+
+    // Calculate BMI
+    var bmi = weight / (heightInMeters * heightInMeters);
+
+    // Determine body status based on BMI
+    var bodyStatus = "";
+    if (bmi < 15) {
+        bodyStatus = "Severe Thinness";
+    } else if (bmi >= 15 && bmi < 16) {
+        bodyStatus = "Moderate Thinness";
+    } else if (bmi >= 16 && bmi < 18.5) {
+        bodyStatus = "Mild Thinness";
+    } else if (bmi >= 18.5 && bmi < 25) {
+        bodyStatus = "Normal";
+    } else if (bmi >= 25 && bmi < 30) {
+        bodyStatus = "Overweight";
+    } else if (bmi >= 30 && bmi < 35) {
+        bodyStatus = "Obese Class I";
+    } else if (bmi >= 35 && bmi < 40) {
+        bodyStatus = "Obese Class II";
+    } else if (bmi >= 40 && bmi < 45) {
+        bodyStatus = "Obese Class III";
+    } else if (bmi >= 45 && bmi < 50) {
+        bodyStatus = "Obese Class IV";
+    } else if (bmi >= 50 && bmi < 60) {
+        bodyStatus = "Obese Class V";
+    } else {
+        bodyStatus = "Obese Class VI";
+    }
+
+};
